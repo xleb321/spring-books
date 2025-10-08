@@ -21,14 +21,14 @@
 
 <h2>Функциональность</h2>
 
-<p>Service One (/process)</p>
+<h3>Service One (/process)</h3>
 <ul>
   <li>Генерирует 200KB случайных данных</li>
   <li>Сохраняет данные в Redis</li>
   <li>Использует публичный ключ для верификации подписей</li>
 </ul>
 
-<p>Service Two (/sign)</p>
+<h3>Service Two (/sign)</h3>
 <ul>
   <li>Получает данные из Redis</li>
   <li>Подписывает данные с использованием приватного ключа ECDSA</li>
