@@ -34,3 +34,10 @@
   <li>Подписывает данные с использованием приватного ключа ECDSA</li>
   <li>Сохраняет подпись в Redis</li>
 <ul>
+
+<h1>Команды проекта</h1>
+<ul>
+  <li>Запуск проекта: docker-compose up -d</li>
+  <li>Проверка service-one: curl -X GET http://localhost:8082/process</li>
+  <li>Проверка service-two: curl -X GET http://localhost:8083/sign</li>
+</ul>
