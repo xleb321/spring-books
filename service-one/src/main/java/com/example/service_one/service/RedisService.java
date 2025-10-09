@@ -10,14 +10,14 @@ public class RedisService {
     private static final String DATA_KEY = "service:random:data";
     private static final String SIGNATURE_KEY = "service:random:signature";
 
-    @Autowired
+    @Autowired //повторяться не буду и далее тоже
     private RedisTemplate<String, byte[]> redisTemplate;
 
     public void saveData(byte[] data) {
         try {
-            System.out.println("Saving data to Redis, size: " + data.length + " bytes");
+            System.out.println("Saving data to Redis, size: " + data.length + " bytes"); //подключаете @Sl4j и пользуетесь log.info()
             redisTemplate.opsForValue().set(DATA_KEY, data);
-            redisTemplate.expire(DATA_KEY, 5, TimeUnit.MINUTES);
+            redisTemplate.expire(DATA_KEY, 5, TimeUnit.MINUTES); //с редисом не знаком, комментариев не оставлю
             System.out.println("Data saved successfully to Redis");
         } catch (Exception e) {
             System.err.println("Error saving data to Redis: " + e.getMessage());
@@ -25,6 +25,7 @@ public class RedisService {
         }
     }
 
+    //методы где-то подсвечиваются? ide пишет no usages
     public byte[] getData() {
         try {
             byte[] data = redisTemplate.opsForValue().get(DATA_KEY);

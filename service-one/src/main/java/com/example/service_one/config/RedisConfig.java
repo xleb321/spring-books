@@ -28,6 +28,7 @@ public class RedisConfig {
         template.setConnectionFactory(connectionFactory);
         template.setKeySerializer(new StringRedisSerializer());
         template.setHashKeySerializer(new StringRedisSerializer());
+        //зачем передавать null? закиньте в нейронку, выглядит не гуд поставьте sonarQube себе
         template.setValueSerializer(null);
         template.setHashValueSerializer(null);
         template.afterPropertiesSet();

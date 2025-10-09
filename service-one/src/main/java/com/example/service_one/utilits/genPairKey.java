@@ -6,6 +6,21 @@ import java.security.spec.X509EncodedKeySpec;
 import java.util.Base64;
 
 public class genPairKey {
+    //не читаемо, вообще main должен быть пустым, только с инициализацией
+
+    /*
+    @SpringBootApplication
+@EnableFeignClients
+@EnableRetry
+@EnableAsync
+public class EpassAdminApplication {
+    public static void main(String[] args) {
+        SpringApplication.run(EpassAdminApplication.class, args);
+    }
+
+}
+     */
+    //что это вообще за main? у вас же отдельный класс с ним есть
     public static void main(String[] args) throws Exception {
         KeyPairGenerator keyGen = KeyPairGenerator.getInstance("EC");
         keyGen.initialize(256);
