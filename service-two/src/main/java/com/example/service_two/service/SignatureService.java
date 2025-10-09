@@ -21,6 +21,7 @@ public class SignatureService {
         return signature.sign();
     }
 
+    //почистите от неиспользуемых методов, сложно читать
     public boolean verifySignature(byte[] data, byte[] signatureBytes, String publicKeyBase64) throws Exception {
         byte[] publicKeyBytes = Base64.getDecoder().decode(publicKeyBase64);
 

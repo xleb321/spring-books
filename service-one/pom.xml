@@ -8,6 +8,10 @@
 		<version>3.5.6</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
+
+<!--	у вас должен быть 1 модуль со своим pom.xml в нем есть ссылки на два вложенных модуля которые представляют собой микросервисы.-->
+<!--	для ресечинга - спринг клауд гейтвей.-->
+
 	<groupId>com.example</groupId>
 	<artifactId>service-one</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
