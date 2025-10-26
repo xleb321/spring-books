@@ -1,13 +1,16 @@
 package com.example.service_one.config;
 
-import org.springframework.context.annotation.Configuration;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
-import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.data.redis.connection.RedisConnectionFactory;
 import org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.serializer.StringRedisSerializer;
-import org.springframework.beans.factory.annotation.Value;
 
+/**
+ * Конфигурация Redis для Service One
+ */
 @Configuration
 public class RedisConfig {
 
@@ -28,8 +31,7 @@ public class RedisConfig {
         template.setConnectionFactory(connectionFactory);
         template.setKeySerializer(new StringRedisSerializer());
         template.setHashKeySerializer(new StringRedisSerializer());
-        template.setValueSerializer(null);
-        template.setHashValueSerializer(null);
+        template.setEnableDefaultSerializer(false);
         template.afterPropertiesSet();
         return template;
     }
